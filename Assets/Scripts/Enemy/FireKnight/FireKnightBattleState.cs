@@ -35,7 +35,7 @@ public class FireKnightBattleState : EnemyState
     public override void Update()
     {
         base.Update();
-        enemy.anim.SetFloat("xVelocity", enemy.rb.velocity.x);
+        enemy.anim.SetFloat("xVelocity", enemy.rb.linearVelocity.x);
 
 
         if (Mathf.Abs(player.transform.position.x - enemy.transform.position.x) < .4f)
@@ -77,7 +77,7 @@ public class FireKnightBattleState : EnemyState
         if (enemy.IsPlayerDetected() && enemy.IsPlayerDetected().distance < enemy.attackDistance - .1f)
             return;
 
-        enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
+        enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.linearVelocity.y);
     }
 
     private bool CanAttack()

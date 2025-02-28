@@ -83,7 +83,7 @@ public class Entity : MonoBehaviour
 
         float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y);
         //if (knockbackPower.x > 0 || knockbackPower.y > 0)
-        rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
+        rb.linearVelocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
 
         yield return new WaitForSeconds(knockbackDuration);
         isKnockback = false;
@@ -144,7 +144,7 @@ public class Entity : MonoBehaviour
         if (isKnockback)
             return;
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
     }
 
     public void SetVelocity(float _xVelocity, float _yVelocity)
@@ -152,7 +152,7 @@ public class Entity : MonoBehaviour
         if (isKnockback)
             return;
 
-        rb.velocity = new Vector2(_xVelocity, _yVelocity);
+        rb.linearVelocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
     #endregion

@@ -28,7 +28,7 @@ public class SkeletonBattleState : EnemyState
     public override void Update()
     {
         base.Update();
-        enemy.anim.SetFloat("xVelocity", enemy.rb.velocity.x);
+        enemy.anim.SetFloat("xVelocity", enemy.rb.linearVelocity.x);
 
         if (enemy.IsPlayerDetected())
         {
@@ -65,7 +65,7 @@ public class SkeletonBattleState : EnemyState
         //if (enemy.IsPlayerDetected() && enemy.IsPlayerDetected().distance < enemy.attackDistance - .1f)
         //    return;
         
-        enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
+        enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.linearVelocity.y);
     }
 
     public override void Exit()

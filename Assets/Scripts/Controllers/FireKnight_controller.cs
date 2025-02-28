@@ -43,7 +43,7 @@ public class FireKnight_controller : MonoBehaviour
     {
         if (!FireKnightBig_controller)
         {
-            rb.velocity = new Vector3(speed, 0, 0);
+            rb.linearVelocity = new Vector3(speed, 0, 0);
 
             Collider2D[] colliders = Physics2D.OverlapBoxAll(check.position, boxSize, WhatIsPlayer);
 
@@ -67,7 +67,7 @@ public class FireKnight_controller : MonoBehaviour
             }
         }else
         {
-            rb.velocity = new Vector3(speedFire, 0, 0);
+            rb.linearVelocity = new Vector3(speedFire, 0, 0);
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(check.position, radiusFire, WhatIsPlayer);
 

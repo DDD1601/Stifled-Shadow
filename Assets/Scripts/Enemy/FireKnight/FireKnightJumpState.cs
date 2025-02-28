@@ -33,7 +33,7 @@ public class FireKnightJumpState : EnemyState
 
         //if (stateTimer > 0)
         //    rb.velocity = new Vector2(0, player.transform.position.y);
-        rb.velocity = new Vector2(0, 20f);
+        rb.linearVelocity = new Vector2(0, 20f);
 
         //if (stateTimer < 0)
         //{
@@ -42,7 +42,7 @@ public class FireKnightJumpState : EnemyState
         //}
         if ((enemy.transform.position.y + 1.5f) > player.transform.position.y)
         {
-            rb.velocity = new Vector2(0, -.1f);
+            rb.linearVelocity = new Vector2(0, -.1f);
             stateMachine.ChangeState(enemy.attackJumpState);
         }
     }
